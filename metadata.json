@@ -1,0 +1,8 @@
+{
+  "name": "ZenTask: Enterprise Workflow Manager",
+  "description": "A high-performance task management system featuring role-based access control for Admins, Managers, and Performers, with AI-powered task optimization and detailed work tracking.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
