@@ -3,14 +3,20 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: './', // Гарантирует правильные пути к ассетам на GitHub Pages
+  base: './', // Важно для корректных путей на GitHub Pages
   define: {
-    // Это лечит ошибку "process is not defined", которая часто является причиной белого экрана
-    'process.env': {}
+    // Исправляет ошибку "process is not defined"
+    'process.env': {
+      NODE_ENV: JSON.stringify('production'),
+      API_KEY: JSON.stringify(process.env.API_KEY || '')
+    },
+    // Исправляет ошибку "global is not defined"
+    'global': 'window',
   },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: true
+    emptyOutDir: true,
+    sourcemap: false
   }
 });

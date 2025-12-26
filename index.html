@@ -31,8 +31,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
-    <!-- Исправленный путь: точка входа теперь относительная -->
-    <script type="module" src="./index.tsx"></script>
-<script type="module" src="/index.tsx"></script>
+    <!-- Путь должен начинаться с / для Vite, сборщик сам заменит его на нужный в dist -->
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>
